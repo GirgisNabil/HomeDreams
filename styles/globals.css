@@ -1,3 +1,256 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+  @font-face {
+    font-family: "SpaceGrotesk"; /*Can be any text*/
+    src: local("SpaceGrotesk"),
+      url("/fonts/SpaceGrotesk-SemiBold.ttf") format("truetype");
+  }
+
+  body {
+    overflow-x: hidden;
+    @apply !scrollbar-thin !scrollbar-track-transparent !scrollbar-thumb-black;
+  }
+  html {
+    font-family: "SpaceGrotesk";
+    font-weight: 600;
+  }
+  :root {
+    --swiper-theme-color: black !important ;
+  }
+}
+@layer components {
+  .shadoww {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .animation-gg {
+    animation: slight-move 1s ease-in-out alternate infinite;
+  }
+
+  @keyframes slight-move {
+    0% {
+      transform: translateY(0px);
+    }
+
+    100% {
+      transform: translateY(15px);
+    }
+  }
+
+  .our-Serverices::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: black;
+    top: 97%;
+    left: 0;
+    transition: all 1s;
+    animation: section-animation 1.5s infinite alternate ease-in-out;
+  }
+
+  .latest-projects::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: black;
+    top: 97%;
+    left: 0;
+    transition: all 1s;
+    animation: section-animation 1.5s infinite alternate ease-in-out;
+  }
+
+  /* .our-Serverices::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: rgb(255, 255, 255);
+    top: 97%;
+    left: 0;
+  }
+
+  .latest-projects::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: rgb(255, 255, 255);
+    top: 97%;
+    left: 0;
+  } */
+
+  @keyframes section-animation {
+    0% {
+      left: 100%;
+    }
+
+    100% {
+      left: -100%;
+    }
+  }
+  .single-services {
+    border-radius: 10px;
+    padding: 30px;
+  }
+
+  .arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+  /*************** Start Nav Link Styling ****************/
+  header ul li {
+    @apply relative overflow-hidden cursor-pointer p-4;
+  }
+
+  li::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: black;
+    top: 0;
+    left: -100%;
+    transition: 0.3s;
+  }
+
+  li:hover::before {
+    left: 0;
+  }
+  /*/*************** End   Nav Link Styling /****************/
+
+  /*/*************** Start   Single project Styling /****************/
+
+  .arrow-container {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 9999;
+    color: white;
+    border-radius: 50%;
+    transition: 1s;
+  }
+
+  .react-arrow {
+    position: relative;
+    color: black;
+
+    padding: 12px;
+    margin: 0px;
+    min-height: 20px;
+    min-width: 20px;
+    color: white;
+    transition: 0.5s;
+  }
+
+  .arrow-container:hover > .react-arrow {
+    transform: translateX(3px);
+  }
+  .arrow-container::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+    z-index: 9999;
+    transition: 0.3s;
+    border: 1px solid white;
+    border-radius: 50%;
+  }
+
+  /* .single-project {
+    border: 1 px solid black;
+  } */
+
+  /*/*************** End   Single project Styling /****************/
+
+  @keyframes right-animation {
+    0% {
+      transform: translateX(0px);
+    }
+
+    100% {
+      transform: translateX(15px);
+    }
+  }
+
+  @keyframes left-animation {
+    0% {
+      transform: translateX(0px);
+    }
+
+    100% {
+      transform: translateX(-15px);
+    }
+  }
+
+  .swiper-pagination {
+    position: static !important;
+  }
+  /* Start of Projects Section*/
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+  }
+
+  .projects-h {
+  }
+  .image-card {
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .image-card:hover {
+    transform: translateY(-15px);
+  }
+
+  .image-card:hover .image {
+    transition: all 0.5 ease;
+    border-radius: 66px;
+    transform: scale(1.1);
+  }
+  /* End of Projects Section*/
+
+  /* Start of Services Page*/
+  .services-menu p {
+    padding: 15px 20px 15px 35px;
+    background-color: #eee;
+    border-bottom: 1px solid white;
+    position: relative;
+    min-width: max-content;
+  }
+
+  .services-menu p::before {
+    position: absolute;
+    content: "";
+    top: 23px;
+    left: 12px;
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+
+  /* End of Services Page*/
+}
