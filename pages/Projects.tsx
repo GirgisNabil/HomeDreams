@@ -7,7 +7,7 @@ import jwt from "jsonwebtoken";
 
 import Auth from "../components/utils/Auth";
 function Projects() {
-  Auth();
+  // Auth();
   interface img {
     id: Number;
     src: string;
