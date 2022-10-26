@@ -3,7 +3,11 @@ import React, { useState, useEffect } from "react";
 import { Interface } from "readline";
 import Image from "next/image";
 import SectionHeader from "../components/SectionHeader";
+import jwt from "jsonwebtoken";
+
+import Auth from "../components/utils/Auth";
 function Projects() {
+  Auth();
   interface img {
     id: Number;
     src: string;

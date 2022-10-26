@@ -237,6 +237,7 @@
     border-bottom: 1px solid white;
     position: relative;
     min-width: max-content;
+    cursor: pointer;
   }
 
   .services-menu p::before {
@@ -253,4 +254,8 @@
   }
 
   /* End of Services Page*/
+
+  /* Start of Login Page*/
+
+  /* End of Login Page*/
 }
