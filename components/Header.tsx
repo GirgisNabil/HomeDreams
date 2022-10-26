@@ -5,6 +5,20 @@ import Link from "next/link";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [navDetector, setNavDetector] = useState(false);
+
+  const toggleNav = () => {
+    var elemnt = document.getElementById("nav");
+    if (navDetector) {
+      elemnt.classList.remove("shownav");
+      elemnt.classList.add("closenav");
+      setNavDetector(false);
+    } else {
+      elemnt.classList.remove("closenav");
+      elemnt.classList.add("shownav");
+      setNavDetector(true);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,7 +35,7 @@ function Header() {
     };
   }, []);
   return (
-    <header>
+    <header className="relative">
       <div
         className={`fixed top-0 w-full transition-all  md:flex lg:h-16 py-3 px-6 items-center justify-between lg:py-10  lg:px-16  z-50 ${
           isScrolled && "bg-amber-300"
@@ -33,7 +47,7 @@ function Header() {
           </div>
         </Link>
 
-        <ul className="hidden text-center justify-center text-lg  w-full md:static md:flex  md:space-x-4 md:flex-grow md:items-center transition-all duration-500 ease-in md:pb-0">
+        <ul className="absolute py-3 closenav bg-amber-300" id="nav">
           <li>
             <Link href="/">Home</Link>
           </li>
@@ -50,7 +64,10 @@ function Header() {
             <Link href="/Contact">Contact</Link>
           </li>
         </ul>
-        <Bars3Icon className="absolute top-4  right-4 cursor-pointer w-8 md:hidden" />
+        <Bars3Icon
+          onClick={toggleNav}
+          className="absolute top-4  right-4 cursor-pointer w-8 md:hidden"
+        />
       </div>
     </header>
   );

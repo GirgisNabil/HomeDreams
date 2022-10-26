@@ -118,6 +118,16 @@
     @apply relative overflow-hidden cursor-pointer p-4;
   }
 
+  #nav {
+    @apply lg:flex text-center justify-center text-lg  w-full md:static md:flex md:bg-transparent  md:space-x-4 md:flex-grow md:items-center transition-all duration-300 ease-in md:pb-0;
+  }
+  .closenav {
+    @apply left-0 top-[55px] scale-0 md:scale-100;
+  }
+  .shownav {
+    @apply left-0 top-[55px] scale-100;
+  }
+
   li::before {
     content: "";
     position: absolute;
