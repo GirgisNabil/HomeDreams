@@ -8,7 +8,7 @@ function Header() {
   const [navDetector, setNavDetector] = useState(false);
 
   const toggleNav = () => {
-    var elemnt = document.getElementById("nav");
+    var elemnt = document.getElementById("nav")!;
     if (navDetector) {
       elemnt.classList.remove("shownav");
       elemnt.classList.add("closenav");
