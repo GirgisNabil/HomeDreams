@@ -47,7 +47,7 @@ function Header() {
           </div>
         </Link>
 
-        <ul className="absolute py-3 closenav bg-amber-300" id="nav">
+        <ul className="absolute py-3 closenav bg-amber-300 ggwp" id="nav">
           <li>
             <Link href="/">Home</Link>
           </li>
